@@ -14,6 +14,43 @@
         <h1>INSCREVA-SE</h1>
     </header>
     <main>
+        <section class="secao-inicio">
+            <section class="container text">
+                <p>Faça parte desse time se inscrevendo na próxima edição do programa de bolsas.</p>
+                <ul id="mensagens-erro"></ul>
+                <form id="form-adiciona">
+                    <div class="">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" name="nome" type="text" placeholder="Seu Nome" class="campo">
+                    </div>
+                    <div class="grupo">
+                        <label for="peso">E-mail</label>
+                        <input id="peso" name="peso" type="text" placeholder="seu@email.com" class="campo campo-medio">
+                    </div>
+                    <div class="grupo">
+                        <label for="altura"><strong>Maior disponibilidade</strong></label>
+                        <input type="radio" name="disponibilidade" value="manha">manhã
+                        <input type="radio" name="disponibilidade" value="tarde">tarde
+                        <input type="radio" name="disponibilidade" value="noite">noite
+                        <input type="radio" name="disponibilidade" value="personalizar">personalizar
+                    </div>
+                    <div class="grupo">
+                        <label for="altura"><strong>Interesses</strong></label>
+                        <input type="checkbox" name="vehicle" value="Bike">IA
+                        <input type="checkbox" name="vehicle" value="Bike">Big Data
+                        <input type="checkbox" name="vehicle" value="Bike">Machine Learning
+                        <input type="checkbox" name="vehicle" value="Bike">Outro
+                    </div>
+                    <div class="grupo">
+                        <label for="participar"><strong>Porque você quer participar?</strong></label>
+                        <textarea name="comment" id="participar" rows="10" cols="40" maxlength="500" placeholder="Digite aqui sua mensagem" class="campo campo-medio"></textarea>
+                    </div>
+
+                </form>
+            </section>
+        </section>
+            <button id="adicionar-paciente" class="botaosaiba" href="#">ENVIAR MENSAGEM</button>
+        </section>
     </main>
     <footer>
         <h2>Compasso Tecnologia LTDA.</h2>
