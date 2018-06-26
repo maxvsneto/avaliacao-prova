@@ -1,12 +1,13 @@
 var botaoAdicionar = document.querySelector("#botao-adicionar");
 botaoAdicionar.addEventListener("click", function(event) {
-    event.preventDefault();
 
     var form = document.querySelector("#form-criar");
 
-    var paciente = obtemPacienteDoFormulario(form);
+    var inscrito = obtemInscritoDoFormulario(form);
 
-    var erros = validaPaciente(paciente);
+    clickArea();
+
+    var erros = validaInscrito(inscrito);
 
     if (erros.length > 0) {
         exibeMensagensDeErro(erros);
@@ -21,9 +22,9 @@ botaoAdicionar.addEventListener("click", function(event) {
 
 });
 
-function obtemPacienteDoFormulario(form) {
+function obtemInscritoDoFormulario(form) {
 
-    var paciente = {
+    var inscrito = {
         nome: form.nome.value,
         email: form.email.value,
         disp: form.disponibilidade.value,
@@ -31,45 +32,59 @@ function obtemPacienteDoFormulario(form) {
         mens: form.mensagem.value
     }
 
-    return paciente;
+    return inscrito;
 }
 
-function validaPaciente(paciente) {
+function caixaRetira(){
+    document.getElementById("areaoutro").style.visibility = "hidden";
+}
+
+function caixaMostra(){
+
+    if (document.getElementById("varOutro").checked == true) 
+        document.getElementById("areaoutro").style.visibility = "visible";
+
+}
+
+function textoMostra(){
+    var checkbox = document.getElementById('varCaixa');
+    if (checkbox.checked == true){
+        document.getElementById("outroarea").style.visibility = "visible";
+        }
+    else{
+        document.getElementById("outroarea").style.visibility = "hidden";
+    }
+}
+
+function validaInscrito(inscrito) {
 
     var erros = [];
 
-    if (paciente.nome.length == 0) {
+    if (inscrito.nome.length == 0) {
         erros.push("O nome não pode ser em branco");
     }
 
-    if (!validaEmail(paciente.email)) {
+    if (!inscrito.email) {
         erros.push("O email não pode ser em branco");
     }
 
-    if (!paciente.disp) {
+    if (!inscrito.disp) {
         erros.push("A disponilidade não pode ser em branco");
     }
 
-    if (!paciente.inte) {
+    if (!inscrito.inte) {
         erros.push("Os interesses não podem ser em branco");
     }
 
-    if (!paciente.mens) {
+    if (!inscrito.mens) {
         erros.push("A mensagem não pode ser em branco");
     }
 
     return erros;
 }
 
-function validaEmail(email){
-    var exclude=/[^@-.w]|^[_@.-]|[._-]{2}|[@.]{2}|(@)[^@]*1/;
-    var check=/@[w-]+./;
-    var checkend=/.[a-zA-Z]{2,3}$/;
-    if(((email.search(exclude) != -1)||(email.search(check)) == -1)||(email.search(checkend) == -1)){return false;}
-    else {return true;}
-}
-
 function exibeMensagensDeErro(erros) {
+    /*
     var ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = "";
 
@@ -78,4 +93,5 @@ function exibeMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
+	*/
 }

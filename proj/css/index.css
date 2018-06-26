@@ -176,7 +176,7 @@ body {
     -webkit-animation: aparece 2s;
             animation: aparece 2s;
 }
-.artificialintelligence {
+.artificial-intelligence {
     top: 50%;
     left: 60%;
     -webkit-transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
@@ -294,8 +294,9 @@ margin-bottom: 2em;
     font-size: .9em;
 	margin: 0;
 	padding-bottom: 1em;
-	width: 100%;
-	border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: .5em;
+    border: 1px solid #ccc;
 	padding: .7em;
 	width: 100%;
 }
@@ -319,4 +320,12 @@ label{
     font-family: "Open Sans Condensed", serif;
     font-size: 1em;
 }
-
+.legendmargin{
+    margin-top: .8em;
+    margin-bottom: .5em;
+}
+.textArea{
+    visibility: hidden;
+    font-family: "Open Sans Condensed", serif;
+    font-size: .9em; 
+}
