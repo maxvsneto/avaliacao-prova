@@ -1,11 +1,12 @@
-var botaoAdicionar = document.querySelector("#botao-adicionar");
+var botaoAdicionar = document.querySelector("#botao-saiba");
+var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+
 botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault();
 
     var form = document.querySelector("#form-criar");
 
     var inscrito = obtemInscritoDoFormulario(form);
-
-    clickArea();
 
     var erros = validaInscrito(inscrito);
 
@@ -15,76 +16,104 @@ botaoAdicionar.addEventListener("click", function(event) {
         return;
     }
 
-    form.reset();
+    criaJSON(inscrito);
 
-    var mensagensErro = document.querySelector("#mensagens-erro");
-    mensagensErro.innerHTML = "";
+    form.reset();
 
 });
 
 function obtemInscritoDoFormulario(form) {
 
+    var interesses = $(":checkbox:checked").map(function(){return $(this).val();}).get();
+
     var inscrito = {
         nome: form.nome.value,
         email: form.email.value,
         disp: form.disponibilidade.value,
-        inte: form.interesses.value,
+        inte: interesses,
         mens: form.mensagem.value
     }
 
     return inscrito;
 }
 
-function caixaRetira(){
-    document.getElementById("areaoutro").style.visibility = "hidden";
+function criaJSON(inscrito){
+
+    var inscritoVerif = {
+        Nome: inscrito.nome,
+        Email: inscrito.email,
+        Disponibilidade: inscrito.disp,
+        Interesses: inscrito.inte,
+        Mensagem: inscrito.mens
+    }
+    var inscritoJSON = JSON.stringify(inscritoVerif);
+    console.log(inscritoJSON);
 }
 
-function caixaMostra(){
-
-    if (document.getElementById("varOutro").checked == true) 
-        document.getElementById("areaoutro").style.visibility = "visible";
-
-}
-
-function textoMostra(){
-    var checkbox = document.getElementById('varCaixa');
-    if (checkbox.checked == true){
-        document.getElementById("outroarea").style.visibility = "visible";
-        }
-    else{
-        document.getElementById("outroarea").style.visibility = "hidden";
+function getCheckbox(){
+    if(document.form.interesses0.checked==true){
+        return 
     }
 }
 
 function validaInscrito(inscrito) {
+    var varinputsDipon = document.querySelectorAll('#disponibilidade');
+    var varinputsIntere = document.querySelectorAll('#interesses');
 
     var erros = [];
 
-    if (inscrito.nome.length == 0) {
-        erros.push("O nome não pode ser em branco");
+    if(!validaNome(inscrito.nome)){
+        erros.push("Seu nome foi muito curto ou inválido. (min 4)");
     }
 
-    if (!inscrito.email) {
-        erros.push("O email não pode ser em branco");
+    if (!validaEmail(inscrito.email)) {
+        erros.push("O email é inválido.");
     }
 
-    if (!inscrito.disp) {
-        erros.push("A disponilidade não pode ser em branco");
+    if (!validaRadioCheck(varinputsDipon)) {
+        erros.push("Escolha alguma disponibilidade.");
     }
 
-    if (!inscrito.inte) {
-        erros.push("Os interesses não podem ser em branco");
+    if (!validaRadioCheck(varinputsIntere)) {
+        erros.push("Escolha algum interesse.");
     }
 
-    if (!inscrito.mens) {
-        erros.push("A mensagem não pode ser em branco");
+    if(!validaMensagem(inscrito.mens)){
+        erros.push("Sua mensagem foi muito curta ou inválida. (min 120)");
     }
 
     return erros;
 }
 
+function validaRadioCheck(inputs) {
+    return [].filter.call(inputs, function (input) {
+        return input.checked;
+    }).length;
+}
+
+function validaMensagem(mens){
+    if(mens == "" || mens.length < 120){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function validaEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function validaNome(nome){
+    if(nome == "" || nome.length < 4){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
 function exibeMensagensDeErro(erros) {
-    /*
     var ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = "";
 
@@ -93,5 +122,4 @@ function exibeMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
-	*/
 }
