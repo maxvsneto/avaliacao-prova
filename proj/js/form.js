@@ -18,6 +18,13 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     criaJSON(inscrito);
 
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
+
+    var formCria = document.getElementById('form-criar');
+    var oldSec = document.getElementsByClassName('secao-inicio');
+    formCria.removeChild(oldSec);
+
     form.reset();
 
 });
@@ -48,6 +55,7 @@ function criaJSON(inscrito){
     }
     var inscritoJSON = JSON.stringify(inscritoVerif);
     console.log(inscritoJSON);
+    exibeSucesso(inscrito.email);
 }
 
 function getCheckbox(){
@@ -122,4 +130,32 @@ function exibeMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
+}
+
+function exibeSucesso(email){
+        document.getElementById("form").remove();
+
+
+        var elementoa = document.createElement("a");
+        elementoa.href = "inscricao.html";
+        elementoa.innerHTML = "Fazer outra inscrição.";
+
+        var elementop = document.createElement("p");                     
+        var textcont = document.createTextNode("Inscrição enviada. Aguarde novos detalhes em seu email " + email + ".");
+        elementop.appendChild(textcont);      
+
+        document.getElementById("exito").appendChild(elementop);
+        document.getElementById("exito").appendChild(elementoa);   
+
+}
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
 }
