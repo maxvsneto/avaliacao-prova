@@ -19,7 +19,7 @@
                 <div id="exito"></div>
         <div id="form">
                 <p>Faça parte desse time se inscrevendo na próxima edição do programa de bolsas.</p>
-                <ul id="mensagens-erro" class="erro"></ul>
+                <ul id="mensagens-erro" class="msgerror"></ul>
             <form id="form-criar">
                 <fieldset class="legendmargin">
                     <label for="nome">Nome completo</label>
@@ -29,19 +29,19 @@
                 </fieldset>	
                 <fieldset class="legendmargin">
                     <legend><strong>Maior disponibilidade</strong></legend>
-                        <input required id="disponibilidade" type="radio" name="disponibilidade" value="Manha">Manhã
-                        <input required id="disponibilidade" type="radio" name="disponibilidade" value="Tarde">Tarde
-                        <input required id="disponibilidade" type="radio" name="disponibilidade" value="Noite">Noite
-                        <input required id="disponibilidade" type="radio" name="disponibilidade" value="Personalizar"/>Personalizar
-                    </label>
+                        <input required id="disponibilidade" type="radio" name="disponibilidade" onclick="caixaMostra()" value="Manha">Manhã
+                        <input required id="disponibilidade" type="radio" name="disponibilidade" onclick="caixaMostra()" value="Tarde">Tarde
+                        <input required id="disponibilidade" type="radio" name="disponibilidade" onclick="caixaMostra()" value="Noite">Noite
+                        <input required id="disponibilidade" type="radio" name="disponibilidade" onclick="caixaMostra()" value="Personalizar"/>Personalizar
+                        <textarea id="areaoutro" class="textArea"></textarea>
                 </fieldset>
 				<fieldset class="legendmargin"> 
                     <legend><strong>Interesses</strong></legend>
-                        <input id="interesses" type="checkbox" name="interesses0" value="IA">IA
-                        <input id="interesses" type="checkbox" name="interesses1" value="Big Data">Big Data
-                        <input id="interesses" type="checkbox" name="interesses2" value="Machine Learning">Machine Learning
-                        <input id="interesses" type="checkbox" name="interesses3" value="Outro"/>Outro
-                    </label>
+                        <input id="interesses" type="checkbox" name="interesses" onclick="textoMostra()" value="IA">IA
+                        <input id="interesses" type="checkbox" name="interesses" onclick="textoMostra()" value="Big Data">Big Data
+                        <input id="interesses" type="checkbox" name="interesses" onclick="textoMostra()" value="Machine Learning">Machine Learning
+                        <input id="interesses" type="checkbox" name="interesses" onclick="textoMostra()" value="Outro"/>Outro
+                        <textarea id="outroarea" class="textArea"></textarea>
                 </fieldset>
 				<fieldset>
 						<label for="mensagem"><strong>Porque você quer participar?</strong></label>

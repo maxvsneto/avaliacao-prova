@@ -44,7 +44,8 @@ main a:hover,
 main a:focus,
 footer a:focus,
 footer a:hover {
-    color: blue;
+    color: white;
+    font-size: 1.2em;
 }
 
 main p {

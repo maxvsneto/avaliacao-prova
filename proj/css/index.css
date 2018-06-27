@@ -141,7 +141,8 @@ footer h2 {
     font-size: 2.5em;
 }
 footer a {
-    color: #3C79B7;
+    color: yellowgreen;
+    text-decoration: none;
 }
 main {
     width: 100%;
@@ -325,10 +326,21 @@ label{
     margin-bottom: .5em;
 }
 .textArea{
-    visibility: hidden;
     font-family: "Open Sans Condensed", serif;
-    font-size: .9em; 
+    font-size: .9em;
+    display: none;
+    width: 100%
 }
-.erro{
+.msgerror{
     color: #851944;
+    font-size: 1em;
+}
+input:focus { 
+    border: 0.5px solid rgb(0, 0, 255);
+}
+input:invalid {
+    border: 0.5px solid rgb(255, 0, 0);
+}
+input:valid {
+    border: 0.5px solid rgb(0, 255, 0);
 }

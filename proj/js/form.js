@@ -58,12 +58,6 @@ function criaJSON(inscrito){
     exibeSucesso(inscrito.email);
 }
 
-function getCheckbox(){
-    if(document.form.interesses0.checked==true){
-        return 
-    }
-}
-
 function validaInscrito(inscrito) {
     var varinputsDipon = document.querySelectorAll('#disponibilidade');
     var varinputsIntere = document.querySelectorAll('#interesses');
@@ -94,7 +88,8 @@ function validaInscrito(inscrito) {
 }
 
 function validaRadioCheck(inputs) {
-    return [].filter.call(inputs, function (input) {
+    return [].filter.call(inputs, function (input) 
+    {
         return input.checked;
     }).length;
 }
@@ -158,4 +153,32 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
             this[i].parentElement.removeChild(this[i]);
         }
     }
+}
+
+function caixaMostra(){
+
+    $('input:radio[name="disponibilidade"]').change(
+        function(){
+            if (this.checked && this.value == 'Personalizar') {
+                document.getElementById("areaoutro").style.display = "inline-block";
+            }else{
+                document.getElementById("areaoutro").style.display = "none";
+            }
+        });
+
+}
+
+function textoMostra(){
+
+    $("input:checked").each(function() {
+
+        if (!$(this).is(':checked')){
+            document.getElementById("outroarea").style.display = "none";
+        }
+        else if (this.checked && this.value == 'Outro') {
+            document.getElementById("outroarea").style.display = "inline-block";
+        }else{
+            document.getElementById("outroarea").style.display = "none";
+        }
+    });
 }
