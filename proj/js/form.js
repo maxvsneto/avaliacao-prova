@@ -18,15 +18,6 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     criaJSON(inscrito);
 
-    var mensagensErro = document.querySelector("#mensagens-erro");
-    mensagensErro.innerHTML = "";
-
-    var formCria = document.getElementById('form-criar');
-    var oldSec = document.getElementsByClassName('secao-inicio');
-    formCria.removeChild(oldSec);
-
-    form.reset();
-
 });
 
 function obtemInscritoDoFormulario(form) {
@@ -53,6 +44,13 @@ function criaJSON(inscrito){
         Interesses: inscrito.inte,
         Mensagem: inscrito.mens
     }
+
+    if (inscritoVerif.Disponibilidade.includes("Personalizar"))
+    {
+            var textoPega = $("textarea#TextoArea").val();
+            inscritoVerif.Disponibilidade = textoPega;
+    }
+
     var inscritoJSON = JSON.stringify(inscritoVerif);
     console.log(inscritoJSON);
     exibeSucesso(inscrito.email);
@@ -128,8 +126,9 @@ function exibeMensagensDeErro(erros) {
 }
 
 function exibeSucesso(email){
-        document.getElementById("form").remove();
 
+        document.getElementById("form").remove();
+        document.getElementById('exito').className += "exitoAlt";
 
         var elementoa = document.createElement("a");
         elementoa.href = "inscricao.html";
@@ -145,8 +144,10 @@ function exibeSucesso(email){
 }
 
 Element.prototype.remove = function() {
+
     this.parentElement.removeChild(this);
 }
+
 NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
     for(var i = this.length - 1; i >= 0; i--) {
         if(this[i] && this[i].parentElement) {
@@ -160,9 +161,9 @@ function caixaMostra(){
     $('input:radio[name="disponibilidade"]').change(
         function(){
             if (this.checked && this.value == 'Personalizar') {
-                document.getElementById("areaoutro").style.display = "inline-block";
+                document.getElementById("TextoArea").style.display = "inline-block";
             }else{
-                document.getElementById("areaoutro").style.display = "none";
+                document.getElementById("TextoArea").style.display = "none";
             }
         });
 
@@ -172,13 +173,10 @@ function textoMostra(){
 
     $("input:checked").each(function() {
 
-        if (!$(this).is(':checked')){
-            document.getElementById("outroarea").style.display = "none";
-        }
-        else if (this.checked && this.value == 'Outro') {
-            document.getElementById("outroarea").style.display = "inline-block";
+        if (this.checked && this.value == 'Outro') {
+            document.getElementById("AreaTexto").style.display = "inline-block";
         }else{
-            document.getElementById("outroarea").style.display = "none";
+            document.getElementById("AreaTexto").style.display = "none";
         }
     });
 }
