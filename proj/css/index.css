@@ -1,6 +1,6 @@
 body {
     font-family: "Open Sans Condensed", serif;
-    background-color: #F2FFFC;
+    background-color: rgb(242, 252, 255);
     font-size: 120%;
     line-height: 1.5;
     display: flex;
@@ -26,8 +26,8 @@ h1 {
 
 .titulo-principal {
     text-align: center;
-    background-color: #11467A;
-    color: #FFF;
+    background-color: rgb(25, 93, 161);
+    color: rgb(255,255,255);
     padding: 2rem;
 }
 
@@ -95,13 +95,13 @@ body {
 }
 .saudacao p {
     font-size: 1.5em;
-    color: #99A;
+    color: rgb(33, 27, 19);
     line-height: 1;
     padding: 2em;
 }
 .saudacao-inicio {
     font-size: 3em;
-    color: #889;
+    color: rgb(33, 27, 19);
 }
 .saudacao-ultima-linha {
     text-align: right;
@@ -130,31 +130,36 @@ body {
 
 .botaosaiba {
     font-size: 1.25em;
-    background-color: #12477B;
-    color: #FFF;
-    padding: .5em;
+    background-color: rgb(25, 93, 161);
+    color: rgb(255, 255, 255);
     width: 40ch;
-    margin: 2em auto;
     display: block;
     text-align: center;
+    padding: 0.5em;
+    margin: 2em auto;
     text-decoration: none;
-    transition: .5s;
-    border: .1em solid #12477B;
+    transition: 0.5s;
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(76, 129, 182);
+    border-image: initial;
 }
 
 .botaofaca {
     font-size: 1.25em;
-    background-color: #FFF;
-    color: #000000;
-    padding: .5em;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 76, 151);
     width: 40ch;
-    margin: 2em auto;
     display: block;
     text-align: center;
+    padding: 0.5em;
+    margin: 3em auto 2em;
     text-decoration: none;
-    transition: .5s;
-    margin-top: 3em;
-    border: .1em solid #fff;
+    transition: 0.5s;
+    border-width: 0.1em;
+    border-style: solid;
+    border-color: rgb(76, 129, 182);
+    border-image: initial;
 }
 
 .centered{
@@ -175,10 +180,10 @@ body {
 .botaofaca:focus,
 .botaofaca:hover {
     font-size: 1.25em;
-    background-color: #000000;
-    color: #FFF;
-    box-shadow: 0 0 .5eem #12477B;
-    border: .1em solid #fff;
+    background-color:rgb(25, 93, 161);
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 .5em rgb(0, 76, 151);
+    border: .1em solid rgb(51, 111, 171);
 }
 
 .secao-inicio {
@@ -191,7 +196,7 @@ body {
     text-shadow: 2px 2px #000;
 }
 .trabalhos {
-    background-color: #11467A;
+    background-color: rgb(102, 147, 192);
     background-size: 20px 20px;
     background-attachment: fixed;
 }
@@ -235,7 +240,7 @@ footer h2 {
     font-size: 2.5em;
 }
 footer a {
-    color: yellowgreen;
+    color: rgb(102, 147, 192);
     text-decoration: none;
 }
 main {
@@ -266,85 +271,75 @@ body {
     font-family: "Shadows Into Light", cursive;
     font-weight: bold;
     font-size: 400%;
-    color: rgba(118,174,218, .5);
+    color: rgba(255, 255, 255, 0.5);
     position: absolute;
     -webkit-animation: aparece 2s;
             animation: aparece 2s;
 }
-.artificial-intelligence {
-    top: 50%;
-    left: 60%;
-    -webkit-transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(.25);
+.designThinking {
+    top: 46%;
+    left: 57%;
+    transform: translate(-50%, -50%) translateZ(4px) rotate(-5deg) scale(0.19);
 }
-.blockchain {
-    top: 70%;
-    left: 20%;
-    -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(10deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(1px) rotate(10deg) scale(.25);
-    opacity: .3;
-}
-.machine-learning {
-    top: 45%;
-    left: 25%;
-    -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(-10deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(2px) rotate(-10deg) scale(.25);
-    opacity: .6;
-}
-.clean-code {
+.blockChain {
     top: 55%;
-    left: 35%;
-    -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(2px) rotate(5deg) scale(.25);
-    opacity: .6;
+    left: 20%;
+    transform: translate(-50%, -50%) translateZ(1px) rotate(10deg) scale(0.25);
+    opacity: 0.9;
 }
-.iot {
-    top: 30%;
-    left: 65%;
-    -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
-    opacity: .6;
+.ioT {
+    top: 45%;
+    left: 24.5%;
+    transform: translate(-50%, -50%) translateZ(2px) rotate(-10deg) scale(0.25);
+    opacity: 0.5;
 }
-.digital {
-    top: 15%;
-    left: 60%;
-    -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(.25);
-}
-.design-thinking {
-    top: 30%;
-    left: 35%;
-    -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(-5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(3px) rotate(-5deg) scale(.25);
-    opacity: .8;
-}
-.collaboration {
-    top: 40%;
+.cleanCode {
+    top: 55%;
     left: 40%;
-    -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(9deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(3px) rotate(9deg) scale(.25);
-    opacity: .8;
+    transform: translate(-50%, -50%) translateZ(2px) rotate(5deg) scale(0.24);
+    opacity: 0.6;
 }
 .agile {
-    top: 70%;
-    left: 65%;
-    -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(-5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(2px) rotate(-5deg) scale(.25);
-    opacity: .6;
+    top: 26%;
+    left: 63%;
+    transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(0.25);
+    opacity: 0.6;
 }
-.big-data {
-    top: 75%;
+.digital {
+    top: 81%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(0.25);
+    opacity: 0.6;
+}
+.artificialInteliigence {
+    top: 27.5%;
     left: 35%;
-    -webkit-transform: translate(-50%, -50%) translateZ(1px) rotate(5deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(1px) rotate(5deg) scale(.25);
-    opacity: .3;
+    transform: translate(-50%, -50%) translateZ(3px) rotate(-5deg) scale(0.25);
+    opacity: 0.8;
+}
+.collaboration {
+    top: 64%;
+    left: 35%;
+    transform: translate(-50%, -50%) translateZ(3px) rotate(6deg) scale(0.16);
+    opacity: 0.5;
+}
+.bigData {
+    top: 68%;
+    left: 68%;
+    transform: translate(-50%, -50%) translateZ(2px) rotate(9deg) scale(0.25);
+    opacity: 0.4;
+}
+.machineLearning {
+    top: 24%;
+    left: 49%;
+    transform: translate(-50%, -50%) translateZ(1px) rotate(-5deg) scale(0.25);
+    opacity: 0.9;
 }
 .design {
     top: 40%;
-    left: 60%;
-    -webkit-transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(.25);
-    opacity: .6;
+    left: 69%;
+    transform: translate(-50%, -50%) translateZ(2px) rotate(10deg) scale(0.25);
+    opacity: 0.6;
 }
 .titulo-principal {
     -webkit-transform-style: preserve-3d;
@@ -386,7 +381,7 @@ margin-bottom: 2em;
 }
 .campo{
     font-family: "Open Sans Condensed", serif;
-    font-size: .9em;
+    font-size: 1em;
 	margin: 0;
 	padding-bottom: 1em;
     width: 100%;
@@ -398,7 +393,7 @@ margin-bottom: 2em;
 
 .campo-medio{
     font-family: "Open Sans Condensed", serif;
-    font-size: .9em;
+    font-size: 1em;
 	display: inline-block;
 	padding-right: .5em;
 }
@@ -421,7 +416,7 @@ label{
 }
 .textArea{
     font-family: "Open Sans Condensed", serif;
-    font-size: .9em;
+    font-size: 1em;
     display: none;
     width: 100%
 }
