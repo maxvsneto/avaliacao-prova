@@ -321,8 +321,8 @@ body {
 .collaboration {
     top: 40%;
     left: 40%;
-    -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(10deg) scale(.25);
-            transform: translate(-50%, -50%) translateZ(3px) rotate(10deg) scale(.25);
+    -webkit-transform: translate(-50%, -50%) translateZ(3px) rotate(9deg) scale(.25);
+            transform: translate(-50%, -50%) translateZ(3px) rotate(9deg) scale(.25);
     opacity: .8;
 }
 .agile {
