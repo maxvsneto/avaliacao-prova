@@ -418,7 +418,10 @@ label{
     font-family: "Open Sans Condensed", serif;
     font-size: 1em;
     display: none;
-    width: 100%
+    width: 100%;
+    height: 1.4em;
+	margin: 0;
+	padding: .7em;
 }
 input:focus { 
     border: 0.5px solid rgb(0, 0, 255);
